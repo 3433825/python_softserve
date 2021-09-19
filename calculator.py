@@ -1,5 +1,5 @@
 ﻿def calc(input):
     return eval(input)
-print(calc('5 + 2'))
-print(calc('( 5 + 2 ) * 2'))
-print(calc('5 + 2 * 2'))
+inputs = ('5 + 2', '( 5 + 2 ) * 2', '5 + 2 * 2')
+for input in inputs:
+    print(f'{input} = {calc(input)}')
