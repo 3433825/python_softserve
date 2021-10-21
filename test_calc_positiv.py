@@ -1,7 +1,5 @@
 import pytest
 from calculator import calc
-'''Test cases for calculator'''
-'''   positive and negative '''
 
 @pytest.mark.parametrize("example,expected", [("1 + 2", 3),
                                               ("5 - 3", 2),
@@ -27,11 +25,7 @@ from calculator import calc
                                               ("( 3 + 5 ) * 3 - 15", 9),
                                               ("3 * ( 3 + 5 ) - 10", 14),
                                               ("2 + 16 / ( 3 + 5 )", 4),
-                                              ("( 3 + 5 ) / 4 + 2", 4),
-                                              ("! + 2", "You entered invalid symbols" ),
-                                              ("5 - w", "You entered alphabetic symbols"),
-                                              (' - ( 3 + 4 ) * 2 + 5 = 29', 'Number is missing at the start of line'),
-                                              ("25 - 3 * ( 3 + 5 )-", "Number is missing at the end of line"),
-                                              ("1 + 2 // 3", "Number is missing")])
+                                              ("( 3 + 5 ) / 4 + 2", 4)])
 def test_calc(example, expected):
+    '''Positive tests-cases for calculator'''
     assert (calc(example)) == expected
