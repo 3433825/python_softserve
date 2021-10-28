@@ -1,11 +1,11 @@
 import pytest
-from check_reg_term import check_example
+from check_registration_term import check_site
+from check_end_date_registration import check_end_date
 
-@pytest.mark.parametrize("site, date_test, expected", [("facebook.com", "01-01-2022", 3375),
-                                              (("facebook.com", "01-01-2023", 3010)),
-                                              (("facebook.com", "01-01-2024", 2645))])
-def test_check_example(site, date_test, expected):
+@pytest.mark.parametrize("site, expected", [("rozetka.com.ua", "2031-01-18"),
+                                              ("compassd.com.ua", "2022-07-18")])
+def test_check_site(site, expected):
     '''Positive test-cases for  whois library'''
 
-    assert (check_example(site, date_test)) == expected
+    assert check_site(site) == check_end_date(expected)
 
