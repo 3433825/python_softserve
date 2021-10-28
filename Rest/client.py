@@ -1,13 +1,7 @@
 import requests
 
-url = 'http://localhost:8888'
-key_mess = 'message'
-value_mess = 'sent_2'
-key_queue = 'queue'
-value_queue = 1
-
-
 #result = requests.get(url)
+
 result = requests.get('http://localhost:8888').text
 print(result)
 

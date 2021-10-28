@@ -3,33 +3,8 @@ import requests
 
 @pytest.mark.parametrize("text_mess,expected", [('text_0', 201)])
 def test_post_request(text_mess, expected):
-    ''' Check-list for Rest:
-    Method POST
-    1. Check that client can successfully store first valid message:
-       1.1. without queue number.
-       1.2. with queue number = 0.
-       1.3. with queue number out of order (e.g. queue number = 10000).
-    2. Check that client can successfully store next valid message:
-       2.1. without queue number after message with queue number = 0
-       2.2. with queue number in order(e.g. queue number  = 1 after first message with queue number = 0)
-       2.3. with queue number out of order ( e.g. with queue number = 100 after first message
-            with queue number = 10000 )
-    Method GET
-    3. Check that client can successfully retrieve message without queue in request when queue has only one message
-    4. Check that client can successfully retrieve message without queue in request when queue has several messages
-    5. Check that client can successfully retrieve message when queue in request  has value
-       5.1. when last message has queue in order (e.g. first message queue = 0 and second message queue = 1)
-       5.2. when last message has queue out of order (e.g. first message queue = 10000 and
-            second message queue = 100)
-    Method Put
-    Method DELETE
-
-    Positive test-cases for post request:
-    Rest-1.1. Check that client can store first valid message to server with default queue alias
+    ''' Rest-1.1. Check that client can store first valid message to server with default queue alias
     Precondition:
-    1. server.py is running
-    2. import pytest
-    3. import requests
     Steps:
     run request - post('http://localhost:8888', json={'message': text_0}).status_code
     Expected result:
@@ -47,13 +22,6 @@ def test_post_request(text_mess, queue_num, expected):
 
     Rest-1.2. Check that client can store first valid message to server with queue alias
     Precondition:
-    1. server.py is running
-    2. import pytest
-    3. import requests
-    4. Value of variables
-       text_mess = 'text_0'
-       queue_num = 0
-
     Steps:
     run request - post('http://localhost:8888', json={'message': text_mess, 'queue': queue_num}).status_code
     Expected result:
