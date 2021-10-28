@@ -1,11 +1,10 @@
 import whois
-from datetime import datetime
+import datetime
 
-def check_site(site, date_test):
+def check_site(site):
     ERR_MESS_TWO_POINTS = "Two points in a row"
     ERR_MESS_UNFINISHED_NAME = "Unfinished name"
     ERR_MESS_CHECK_SITE_NAME = "Check site name"
-   # ERR_MESS_NUM_DAYS = "The number of days must be greater than 0"
 
     if site.rfind("..") != -1:
         return ERR_MESS_TWO_POINTS
@@ -20,7 +19,7 @@ def check_site(site, date_test):
         else:
             date_time_expire = date_time_expire_obj.date()
 
-        date_requested = datetime.strptime(date_test, '%d-%m-%Y').date()
-        days_end_reg_fr_test = (date_time_expire - date_requested).days
-        return days_end_reg_fr_test
+        actual_date = datetime.datetime.today().date()
+        days_end_reg_from_actual_date = (date_time_expire - actual_date).days
+        return days_end_reg_from_actual_date
 
