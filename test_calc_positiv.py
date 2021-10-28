@@ -1,7 +1,7 @@
 import pytest
 from calculator import calc
 
-@pytest.mark.parametrize("example,expected", [("1 + 2", 3),
+@pytest.mark.parametrize("line,expected", [("1 + 2", 3),
                                               ("5 - 3", 2),
                                               ("2 * 3", 6),
                                               ("10 / 4", 2.5),
@@ -26,6 +26,7 @@ from calculator import calc
                                               ("3 * ( 3 + 5 ) - 10", 14),
                                               ("2 + 16 / ( 3 + 5 )", 4),
                                               ("( 3 + 5 ) / 4 + 2", 4)])
-def test_calc(example, expected):
+def test_calc(line, expected):
     '''Positive tests-cases for calculator'''
-    assert (calc(example)) == expected
+    assert (calc(line)) == expected
+

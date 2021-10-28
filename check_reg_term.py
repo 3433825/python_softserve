@@ -23,3 +23,4 @@ def check_site(site, date_test):
         date_requested = datetime.strptime(date_test, '%d-%m-%Y').date()
         days_end_reg_fr_test = (date_time_expire - date_requested).days
         return days_end_reg_fr_test
+

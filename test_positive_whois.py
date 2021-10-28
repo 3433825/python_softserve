@@ -8,3 +8,4 @@ def test_check_example(site, date_test, expected):
     '''Positive test-cases for  whois library'''
 
     assert (check_example(site, date_test)) == expected
+
