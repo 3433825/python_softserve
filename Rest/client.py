@@ -1,5 +1,6 @@
 import requests
 
+
 class Task_rest():
 
     def __init__(self, url):
