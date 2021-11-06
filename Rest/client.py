@@ -2,30 +2,22 @@ import requests
 
 class Task_rest():
 
-    def __init__(self, url, parameter_for_query):
+    def __init__(self, url):
         self.url = url
-        self.parameter_for_query = parameter_for_query
 
-    def get(self):
-        query_get = requests.get(self.url, params=self.parameter_for_query)
-        return query_get
+    def get(self, queue):
+        get_request = requests.get(self.url, params={'queue': queue})
+        return get_request
 
-    def delete(self, ):
-        query_delete = requests.delete(self.url, params=self.parameter_for_query)
-        return query_delete
+    def post(self, queue, message):
+        post_request = requests.post(self.url, json={'message': message, 'queue': queue})
+        return post_request
 
-    def post(self):
-        query_post = requests.post(self.url, json=self.parameter_for_query)
-        return query_post
+    def delete(self, queue):
+        delete_request = requests.delete(self.url, params={'queue': queue})
+        return delete_request
 
-    def put(self):
-        query_put = requests.put(self.url, params=self.parameter_for_query)
-        return query_put
-
-def message_text_from_response(message):
-    message_from_response_split = message.split(':')
-    message_from_response_all_string = message_from_response_split[1]
-    message_from_response_clear_left = message_from_response_all_string.lstrip(' "')
-    text_from_response = message_from_response_clear_left.rstrip('"}')
-    return text_from_response
+    def put(self, queue, message):
+        put_request = requests.put(self.url, json={'message': message, 'queue': queue})
+        return put_request
 
