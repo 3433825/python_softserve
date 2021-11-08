@@ -1,7 +1,7 @@
 import requests
 
 
-class Task_rest():
+class Client:
 
     def __init__(self, url):
         self.url = url
@@ -20,5 +20,3 @@ class Task_rest():
 
     def put(self, queue, message):
         put_request = requests.put(self.url, json={'message': message, 'queue': queue})
-        return put_request
-
