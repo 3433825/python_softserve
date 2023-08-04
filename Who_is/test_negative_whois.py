@@ -1,5 +1,5 @@
 import pytest
-from check_registration_term import check_site
+from Registration.check_registration_term import check_site
 
 
 @pytest.mark.parametrize("example,expected", [("facebook..com", "Two points in a row"),

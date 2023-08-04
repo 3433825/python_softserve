@@ -1,6 +1,6 @@
 import pytest
-from check_registration_term import check_site
-from check_end_date_registration import check_end_date
+from Registration.check_registration_term import check_site
+from Registration.check_end_date_registration import check_end_date
 
 @pytest.mark.parametrize("site, expected", [("rozetka.com.ua", "2031-01-18"),
                                               ("compassd.com.ua", "2022-07-18")])
