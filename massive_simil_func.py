@@ -1,9 +1,9 @@
+from difflib import SequenceMatcher
+from string import punctuation
+from data import sentence
+
 def simil_words_ru(text):
     """Make massive similar words"""
-
-    from difflib import SequenceMatcher
-    from string import punctuation
-
 # Making list of words
     words = []
     for word in text.lower().split():
