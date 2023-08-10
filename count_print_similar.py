@@ -1,3 +1,4 @@
+
 from string import punctuation
 from Data import data
 
@@ -16,7 +17,9 @@ def find_simil_words(text: str):
         word_counts[word] = word_counts.get(word, 0) + 1
 
     # Формируем список повторяющихся слов
-    duplicates = [(word, count) for word, count in word_counts.items() if count > 1]
+    duplicates = [(word) for word, count in word_counts.items() if count > 1]
+    # duplicates = [(word, count) for word, count in word_counts.items() if count > 1]
+
 
     return duplicates
 
