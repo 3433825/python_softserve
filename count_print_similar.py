@@ -1,6 +1,6 @@
-
 from string import punctuation
 from Data import data
+
 
 def find_simil_words(text: str):
     """Make massive similar words"""
@@ -19,7 +19,6 @@ def find_simil_words(text: str):
     # Формируем список повторяющихся слов
     duplicates = [(word) for word, count in word_counts.items() if count > 1]
     # duplicates = [(word, count) for word, count in word_counts.items() if count > 1]
-
 
     return duplicates
 
