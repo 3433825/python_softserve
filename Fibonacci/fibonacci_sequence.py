@@ -9,4 +9,4 @@ def get_element_fibonacci_sequence(n: int) -> int:
     return n if n < 2 else get_element_fibonacci_sequence(n - 1) + get_element_fibonacci_sequence(n - 2)
 
 
-print(get_element_fibonacci_sequence(6))
+print(get_element_fibonacci_sequence(35))
