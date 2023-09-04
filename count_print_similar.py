@@ -17,10 +17,18 @@ def find_simil_words(text: str):
         word_counts[word] = word_counts.get(word, 0) + 1
 
     # Формируем список повторяющихся слов
-    duplicates = [(word) for word, count in word_counts.items() if count > 1]
-    # duplicates = [(word, count) for word, count in word_counts.items() if count > 1]
+    duplicates = [word for word, count in word_counts.items() if count > 1]
+    duplicates_count = [(word, count) for word, count in word_counts.items() if count > 1]
 
-    return duplicates
+    return word_counts, duplicates, duplicates_count
 
 
-print(find_simil_words(data.SENTENCE))
+words_set, duplicates_words, duplicates_words_count = find_simil_words(data.SENTENCE)
+for key_value in words_set.items():
+    print(key_value)
+for w in duplicates_words:
+    print(w)
+for t in duplicates_words_count:
+    print(t)
+
+# print(find_simil_words(data.SENTENCE))
