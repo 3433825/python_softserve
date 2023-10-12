@@ -20,5 +20,6 @@ ELEMENT_FIBONACCI = {
         "6 element",
     ]
 }
+LIST_SIMPLE = ["carrot", "tomato", "apple", "orange", "banana"]
 LIST_FOR_DICT = [["vegetables", ["carrot", "tomato"]], ['fruits', ["apple", "orange", "banana"]]]
 LIST_FOR_DICT_w_TUPLES = [("vegetables", ["carrot", "tomato"]), ('fruits', ["apple", "orange", "banana"])]
