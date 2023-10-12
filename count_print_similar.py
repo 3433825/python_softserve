@@ -31,4 +31,4 @@ for w in duplicates_words:
 for t in duplicates_words_count:
     print(t)
 
-# print(find_simil_words(data.SENTENCE))
+print(find_simil_words(data.SENTENCE))

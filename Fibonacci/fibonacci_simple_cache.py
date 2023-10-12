@@ -13,4 +13,7 @@ def fib_simple_cache(n: int) -> int:
     return n if n < 2 else fib_simple_cache(n - 1) + fib_simple_cache(n - 2)
 
 
-# print(fib_simple_cache(35))
+n = 35
+print(fib_simple_cache(n))
+# execution_time =
+
