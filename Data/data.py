@@ -20,6 +20,11 @@ ELEMENT_FIBONACCI = {
         "6 element",
     ]
 }
+UNSORTED_NUMBERS_LIST = [9, 3, 1, 7, 5, 8, 4, 2, 6]
 LIST_SIMPLE = ["carrot", "tomato", "apple", "orange", "banana"]
 LIST_FOR_DICT = [["vegetables", ["carrot", "tomato"]], ['fruits', ["apple", "orange", "banana"]]]
 LIST_FOR_DICT_w_TUPLES = [("vegetables", ["carrot", "tomato"]), ('fruits', ["apple", "orange", "banana"])]
+WORDS = ['word', 'sun', 'madam', 'parap']
+NAMES = ['John', 'Jane', 'Jim']
+SCORES = [85, 90, 75]
+GRADES = ['A', 'A', 'B']
