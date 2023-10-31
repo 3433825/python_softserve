@@ -17,10 +17,71 @@ def find_simil_words(text: str):
         word_counts[word] = word_counts.get(word, 0) + 1
 
     # Формируем список повторяющихся слов
-    duplicates = [(word) for word, count in word_counts.items() if count > 1]
-    # duplicates = [(word, count) for word, count in word_counts.items() if count > 1]
+    duplicates = [word for word, count in word_counts.items() if count > 1]
+    duplicates_count = [(word, count) for word, count in word_counts.items() if count > 1]
 
-    return duplicates
+    return word_counts, duplicates, duplicates_count
 
+
+words_set, duplicates_words, duplicates_words_count = find_simil_words(data.SENTENCE)
+for key_value in words_set.items():
+    print(key_value)
+for w in duplicates_words:
+    print(w)
+for t in duplicates_words_count:
+    print(t)
 
 print(find_simil_words(data.SENTENCE))
+
+# *************************************************************************************************
+
+"""
+from collections import Counter
+
+def sort_least_repeated(array):
+    counter = Counter(array)  # Подсчет числа вхождений каждого элемента
+    least_repeated = sorted(counter.items(), key=lambda x: (x[1], -x[0]))  # Сортировка по наименее встречаемым
+    элементам
+
+    sorted_array = []
+    for element, count in least_repeated:
+        sorted_array.extend([element] * count)  # Добавление элементов в результирующий массив в соответствии с их
+                                                # количеством
+
+    return sorted_array
+Вызов функции sort_least_repeated с массивом целых чисел k вернет отсортированный массив с наименее повторяющимися
+числами. Если несколько чисел имеют одинаковое количество повторений, они будут отсортированы в порядке убывания.
+
+"""
+
+from collections import Counter
+sentence_inst = data.SENTENCE
+
+
+def find_duplicated_words(sentence):
+    """Make massive similar words"""
+    # Making list of words
+    words = sentence.lower().split()
+    words = list(map(lambda word: word.strip(punctuation), words))
+
+    #Making dict similar words
+    word_counts = {}
+    counter = Counter(words)  # Подсчет числа вхождений каждого элемента
+    print()
+    print(counter)
+
+    duplicated_words = []
+    duplicated_words_dict = {}
+    for element, count in counter.items():
+        if count > 1:
+            duplicated_words.append(element)  # Добавление элементов в результирующий массив в соответствии с их
+                                              # количеством
+            duplicated_words_dict[element] = count
+
+    return duplicated_words, duplicated_words_dict
+
+
+
+
+print(find_duplicated_words(sentence_inst)[0])
+print(find_duplicated_words(sentence_inst)[1])

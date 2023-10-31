@@ -1,7 +1,10 @@
+import timeit
+
+
 def fib(n: int) -> int:
     """
     :param n:
-    :return: n-element og Fibonacci sequence.
+    :return: n-element of Fibonacci sequence.
     """
 
     if not isinstance(n, int):
@@ -9,7 +12,13 @@ def fib(n: int) -> int:
     return n if n < 2 else fib(n - 1) + fib(n - 2)
 
 
-# print(fib(35))
+n = 35
+# print(fib(0))
+print(f"{n}th element of Fibonacci sequence: {fib(n)}")
+
+
+execution_time = timeit.timeit(lambda: fib(n), number=1)
+print(f"execution_time: {execution_time:.6f} s")
 
 
 # if __name__ == "__main__":

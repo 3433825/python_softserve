@@ -1,7 +1,7 @@
 
 # !/usr/bin/python
 # ToDo add config
-# ToDo add logging
+# ToDo add logs
 # ToDo replace json schemes
 # ToDo replace error message
 
