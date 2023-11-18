@@ -54,6 +54,7 @@ def add_n(x, n):
 
 def add_n_to_sequence_lambda(sequence, n):
     added_n = list(map(lambda x: x + n, sequence))
+    logger.info(f"adding {n} to every element of {sequence}")
     return added_n
 
 
