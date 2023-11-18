@@ -8,7 +8,7 @@ for it in the already sorted list. This happens until there are no unused items 
 from Data import data
 
 
-def insertion_sort(arr):
+def insertion_sort(get_unsorted_numbers_list):
     for i in range(len(arr)):
         initial_array = arr
         current_value = arr[i]
