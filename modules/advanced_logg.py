@@ -2,7 +2,7 @@ import logging
 from datetime import datetime
 
 
-def advanced_logger():
+def advanced_logger(path):
     logger = logging.getLogger(__name__)
     logger.setLevel(logging.INFO)
 
@@ -10,8 +10,13 @@ def advanced_logger():
         fmt=f'[%(asctime)s] %(levelname)s %(filename)s %(message)s',
         datefmt='%Y/%m/%d %H:%M:%S')
 
+    # file_handler = logging.FileHandler(
+    #     '../logs/{:%Y-%m-%d}.log'.format(datetime.now()),
+    #     mode='a'
+    # )
+
     file_handler = logging.FileHandler(
-        '../logs/{:%Y-%m-%d}.log'.format(datetime.now()),
+        path.format(datetime.now()),
         mode='a'
     )
 
