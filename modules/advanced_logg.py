@@ -2,7 +2,7 @@ import logging
 from datetime import datetime
 
 
-def advanced_logger(path):
+def advanced_logger(path='./{:%Y-%m-%d}.log'):
     logger = logging.getLogger(__name__)
     logger.setLevel(logging.INFO)
 

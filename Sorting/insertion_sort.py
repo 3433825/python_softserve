@@ -15,7 +15,7 @@ def insertion_sort(get_unsorted_numbers_list):
         position = i
 
         while position > 0 and arr[position - 1] > current_value:
-            # rearrange the numbers, moving down the list
+            # rearrange the operations_with_numbers, moving down the list
             arr[position] = arr[position - 1]
             position = position - 1
 

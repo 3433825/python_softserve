@@ -95,4 +95,4 @@ print(find_duplicated_words(sentence_inst)[1])
 @duration
 def find_duplicated_words_ru(text):
     return find_duplicated_words(text)
-print(find_duplicated_words_ru(text))
+print(find_duplicated_words(text))
