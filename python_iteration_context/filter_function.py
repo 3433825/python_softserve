@@ -7,13 +7,13 @@ filter(function, iterable)
 
 from Data import data
 
-# filter even operations_with_numbers
+# filter even numbers_operations
 example_list = data.UNSORTED_NUMBERS_LIST
 even_numbers_list = list(filter(lambda x: x % 2 == 0, example_list))
 print(example_list)
 print(f"even numbers from list {even_numbers_list}")
 
-# filter operations_with_numbers > 3
+# filter numbers_operations > 3
 numbers_over_3_list = list(filter(lambda x: x > 3, example_list))
 print(example_list)
 print(f"numbers > 3 = {numbers_over_3_list}")

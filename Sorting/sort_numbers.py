@@ -9,7 +9,7 @@ class SortMethods:
 
     def buble_sort(self):
         """
-        Sorts operations_with_numbers list in ascending order
+        Sorts numbers_operations list in ascending order
         """
         numbers_list = self.unsorted_numbers_list
         def swap(i, j):
