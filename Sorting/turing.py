@@ -59,20 +59,20 @@ from modules import advanced_logg
 logger = advanced_logg.advanced_logger()
 
 
-def sort_least_repeated(array):
+def sort_least_repeated(array: list):
     logger.info("sort_least_repeated")
-    counter = Counter(array)  # Подсчет числа вхождений каждого элемента
-    least_repeated = sorted(
-        counter.items(), key=lambda x: (x[1], -x[0])
-    )  # Сортировка по наименее встречаемым
-    # элементам
 
+    # Подсчет числа вхождений каждого элемента
+    counter = Counter(array)
+
+    # Сортировка по наименее встречаемым элементам
+    least_repeated = sorted(counter.items(), key=lambda x: (x[1], -x[0]))
+
+    # Добавление элементов в результирующий массив в соответствии с их количеством
     sorted_array = []
     for element, count in least_repeated:
-        sorted_array.extend(
-            [element] * count
-        )  # Добавление элементов в результирующий массив в соответствии с их
-        # количеством
+        sorted_array.extend([element] * count)
+
     logger.info(f"before sorting: {array}, after sorting: {sorted_array}")
     return sorted_array
 
