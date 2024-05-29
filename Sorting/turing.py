@@ -8,16 +8,19 @@ Return the final array
 from collections import Counter
 
 def sort_least_repeated(array):
-    counter = Counter(array)  # Подсчет числа вхождений каждого элемента
-    least_repeated = sorted(counter.items(), key=lambda x: (x[1], -x[0]))  # Сортировка по наименее встречаемым
-    элементам
+    # Подсчет числа вхождений каждого элемента
+    counter = Counter(array)
 
+    # Сортировка по наименее встречаемым элементам
+    least_repeated = sorted(counter.items(), key=lambda x: (x[1], -x[0]))
+
+    # Добавление элементов в результирующий массив в соответствии с их количеством
     sorted_array = []
     for element, count in least_repeated:
-        sorted_array.extend([element] * count)  # Добавление элементов в результирующий массив в соответствии с их
-                                                # количеством
+        sorted_array.extend([element] * count)
 
     return sorted_array
+
 Вызов функции sort_least_repeated с массивом целых чисел k вернет отсортированный массив с наименее повторяющимися
 числами. Если несколько чисел имеют одинаковое количество повторений, они будут отсортированы в порядке убывания.
 
