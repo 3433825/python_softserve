@@ -14,7 +14,7 @@ def main_simple_cache(n: int) -> int:
 
 
 if __name__ == "__main__":
-    n = 35
+    n = 3
     print(main_simple(n))
     print()
     print(main_simple_cache(n))
