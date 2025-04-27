@@ -8,14 +8,14 @@ for it in the already sorted list. This happens until there are no unused items 
 from Data import data
 
 
-def insertion_sort(arr):
+def insertion_sort(get_unsorted_numbers_list):
     for i in range(len(arr)):
         initial_array = arr
         current_value = arr[i]
         position = i
 
         while position > 0 and arr[position - 1] > current_value:
-            # rearrange the numbers, moving down the list
+            # rearrange the numbers_operations, moving down the list
             arr[position] = arr[position - 1]
             position = position - 1
 

@@ -48,9 +48,9 @@ def test_post_to_empty_numbered_queue():
     url = "http://localhost:8888"
     queue = 2
     number_of_messages = 1
-    # numbers = list(range(1, number_of_messages + 1))
+    # numbers_operations = list(range(1, number_of_messages + 1))
     # messages = []
-    # for num in numbers:
+    # for num in numbers_operations:
     #     messages.append("text_" + str(num))
     messages = creating_list_of_messages(number_of_messages)
 
@@ -105,9 +105,9 @@ def test_put_oldest_message_in_numbered_queue():
     new_message = "text_changed"
 
     number_of_messages = 2
-    # numbers = list(range(1, number_of_messages + 1))
+    # numbers_operations = list(range(1, number_of_messages + 1))
     # messages = []
-    # for num in numbers:
+    # for num in numbers_operations:
     #     messages.append("text_" + str(num))
     messages = creating_list_of_messages(number_of_messages)
 
@@ -168,9 +168,9 @@ def test_get_oldest_message_from_numbered_queue():
     url = "http://localhost:8888"
     queue = 4
     number_of_messages = 2
-    # numbers = list(range(1, number_of_messages + 1))
+    # numbers_operations = list(range(1, number_of_messages + 1))
     # messages = []
-    # for num in numbers:
+    # for num in numbers_operations:
     #     messages.append("text_" + str(num))
     messages = creating_list_of_messages(number_of_messages)
 
@@ -217,9 +217,9 @@ def test_delete_from_numbered_queue():
     url = "http://localhost:8888"
     queue = 5
     number_of_messages = 2
-    # numbers = list(range(1, number_of_messages + 1))
+    # numbers_operations = list(range(1, number_of_messages + 1))
     # messages = []
-    # for num in numbers:
+    # for num in numbers_operations:
     #     messages.append("text_" + str(num))
     messages = creating_list_of_messages(number_of_messages)
 
@@ -275,9 +275,9 @@ def test_oldest_message_was_deleted_after_get_request_to_numbered_queue():
     url = "http://localhost:8888"
     queue = 10000
     number_of_messages = 2
-    # numbers = list(range(1, number_of_messages + 1))
+    # numbers_operations = list(range(1, number_of_messages + 1))
     # messages = []
-    # for num in numbers:
+    # for num in numbers_operations:
     #     messages.append("text_" + str(num))
     messages = creating_list_of_messages(number_of_messages)
 

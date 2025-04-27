@@ -9,6 +9,6 @@ def duration(func: typing.Callable) -> typing.Callable:
         start = time.process_time()
         result = func(*args, **kwargs)
         duration_time = time.process_time() - start
-        print(f"{func.__name__} takes {duration_time} seconds")
+        print(f"{func.__name__} ran for {duration_time} seconds")
         return result
     return wrapper_time

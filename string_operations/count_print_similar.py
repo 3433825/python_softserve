@@ -1,5 +1,8 @@
+import timeit
 from string import punctuation
 from Data import data
+from Fibonacci.duration import duration
+from collections import Counter
 
 
 def find_simil_words(text: str):
@@ -31,8 +34,19 @@ for w in duplicates_words:
 for t in duplicates_words_count:
     print(t)
 
-print(find_simil_words(data.SENTENCE))
 
+text = data.SENTENCE
+print(find_simil_words(data.SENTENCE))
+print()
+execution_time = timeit.timeit(lambda: find_simil_words(text), number=1)
+print(f"execution_time with timeit module: {execution_time:.6f} s")
+print()
+
+
+@duration
+def count_similar_words_ru(text):
+    return find_simil_words(text)
+print(count_similar_words_ru(text))
 # *************************************************************************************************
 
 """
@@ -54,7 +68,7 @@ def sort_least_repeated(array):
 
 """
 
-from collections import Counter
+
 sentence_inst = data.SENTENCE
 
 
@@ -64,24 +78,21 @@ def find_duplicated_words(sentence):
     words = sentence.lower().split()
     words = list(map(lambda word: word.strip(punctuation), words))
 
-    #Making dict similar words
-    word_counts = {}
+    # Making dict similar words
     counter = Counter(words)  # Подсчет числа вхождений каждого элемента
-    print()
-    print(counter)
-
-    duplicated_words = []
-    duplicated_words_dict = {}
-    for element, count in counter.items():
-        if count > 1:
-            duplicated_words.append(element)  # Добавление элементов в результирующий массив в соответствии с их
-                                              # количеством
-            duplicated_words_dict[element] = count
+    duplicated_words = [element for element, count in counter.items() if count > 1]  # Добавление элементов в
+        # результирующий массив в соответствии с их количеством
+    duplicated_words_dict = {element: count for element, count in counter.items() if count > 1}
 
     return duplicated_words, duplicated_words_dict
 
 
-
-
-print(find_duplicated_words(sentence_inst)[0])
+duplicated_words = find_duplicated_words(sentence_inst)[0]
+print(duplicated_words)
 print(find_duplicated_words(sentence_inst)[1])
+
+
+@duration
+def find_duplicated_words_ru(text):
+    return find_duplicated_words(text)
+print(find_duplicated_words(text))

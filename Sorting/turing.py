@@ -8,16 +8,19 @@ Return the final array
 from collections import Counter
 
 def sort_least_repeated(array):
-    counter = Counter(array)  # Подсчет числа вхождений каждого элемента
-    least_repeated = sorted(counter.items(), key=lambda x: (x[1], -x[0]))  # Сортировка по наименее встречаемым
-    элементам
+    # Подсчет числа вхождений каждого элемента
+    counter = Counter(array)
 
+    # Сортировка по наименее встречаемым элементам
+    least_repeated = sorted(counter.items(), key=lambda x: (x[1], -x[0]))
+
+    # Добавление элементов в результирующий массив в соответствии с их количеством
     sorted_array = []
     for element, count in least_repeated:
-        sorted_array.extend([element] * count)  # Добавление элементов в результирующий массив в соответствии с их
-                                                # количеством
+        sorted_array.extend([element] * count)
 
     return sorted_array
+
 Вызов функции sort_least_repeated с массивом целых чисел k вернет отсортированный массив с наименее повторяющимися
 числами. Если несколько чисел имеют одинаковое количество повторений, они будут отсортированы в порядке убывания.
 
@@ -59,15 +62,23 @@ from modules import advanced_logg
 logger = advanced_logg.advanced_logger()
 
 
-def sort_least_repeated(array):
-    logger.info('sort_least_repeated')
-    counter = Counter(array)  # Подсчет числа вхождений каждого элемента
-    least_repeated = sorted(counter.items(), key=lambda x: (x[1], -x[0]))  # Сортировка по наименее встречаемым
-    # элементам
+def sort_least_repeated(array: list):
+    logger.info("sort_least_repeated")
 
+    # Подсчет числа вхождений каждого элемента
+    counter = Counter(array)
+
+    # Сортировка по наименее встречаемым элементам
+    least_repeated = sorted(counter.items(), key=lambda x: (x[1], -x[0]))
+
+    # Добавление элементов в результирующий массив в соответствии с их количеством
     sorted_array = []
     for element, count in least_repeated:
-        sorted_array.extend([element] * count)  # Добавление элементов в результирующий массив в соответствии с их
-        # количеством
-    logger.info(f'before sorting: {array}, after sorting: {sorted_array}')
+        sorted_array.extend([element] * count)
+
+    logger.info(f"before sorting: {array}, after sorting: {sorted_array}")
     return sorted_array
+
+
+k = [3, 2, 4, 2, 5, 4, 3, 1, 1, 2, 3, 8]
+print(sort_least_repeated(k))
